@@ -76,11 +76,12 @@
 
 - (void)addSubview:(UIView *)view
 {
+    UIView *containerView = self.floatingWindow.rootViewController.view;
     if (!view || !self.floatingWindow ||
-        [self.floatingWindow.subviews containsObject:view]) {
+        [containerView.subviews containsObject:view]) {
         return;
     }
-    [self.floatingWindow addSubview:view];
+    [containerView addSubview:view];
 }
 
 @end
